@@ -83,13 +83,13 @@ module.exports = function(passport){
 			//var str = key.update(secret, 'utf8', 'hex') + key.final('hex');
 			//console.log(str); 
 
-			var withdrawPassword = req.body.withdrawPassword;
+			//var withdrawPassword = req.body.withdrawPassword;
 
 			var newUser = new User();
 			newUser.local.email = req.body.email;
 		  newUser.local.username = username;
 			newUser.local.password = newUser.generateHash(password);
-			newUser.local.withdrawPassword = newUser.generateHash(withdrawPassword);
+			//newUser.local.withdrawPassword = newUser.generateHash(withdrawPassword);
 			newUser.local.key0 = public; //destination.publicKey();
 			newUser.local.key1 = secret; //str;
 			// More user object properties need to be added here.....
