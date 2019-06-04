@@ -28,29 +28,22 @@ module.exports = function(app, passport){
     
   });
 
+  //MAIN WALLET PAGE
   app.get('/walkercoin', isLoggedIn, function(req, res){
 
-    /* var id = req.user._id.toString();
-    var query = {"_id": ObjectId(id)}; 
-    
-    db1.users.findOne(query, function(err, docs){
-
-      if(err) { }
-
-      if(docs){
-
-        createWalkerCoinTrustline(docs.local.key1);
-
-      } else {
-
-
-      }
-    
-     }); */
-
-     res.render('walkercoin.html');
+     res.render('walkercoin-wallet.html');
 
   });
+
+  
+  // New Walkercoin test page
+  app.get('/transactions', isLoggedIn, function(req, res){
+    
+         res.render('walkercoin-transactions.html');
+    
+  });
+
+  
 
   //SIGNUP route
   app.post('/signup', passport.authenticate('local-signup', {
