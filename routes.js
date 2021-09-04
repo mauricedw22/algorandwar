@@ -7,7 +7,7 @@ module.exports = function(app){
   const algodServer = "https://testnet-algorand.api.purestake.io/ps2";
   const algodPort = "";
   const algodToken = {
-      'X-API-Key': "X7HxsshAnN626baE6sNP9963GCwayNPXamoGg3fy"
+      'X-API-Key': "<API-KEY>"
   };
 
   const algodClient = new algosdk.Algodv2(algodToken, algodServer, algodPort);  
@@ -24,7 +24,7 @@ module.exports = function(app){
 
       (async() => {
 
-        const passphrase = "wedding cash year brass wash usual gift toy afford neither august usual lazy federal patient room select gather example trick desert bid scout absorb approve";
+        const passphrase = "<PASSPHRASE>";
     
         let myAccount = algosdk.mnemonicToSecretKey(passphrase)
         console.log("My address: %s", myAccount.addr)
@@ -50,8 +50,8 @@ module.exports = function(app){
     (async() => {
           let params = await algodClient.getTransactionParams();
           let endRound = params.lastRound + parseInt(1000);
-          let owner = "Q6TFA4OOEHYOQFFHQU3O26WEB5C5R4UUPH3KXIJ3FMGBMLQW3RDAOF3K7U";
-          let receiver = "UOSB5XIKB6LSIXUKSOJCPFVUYHAWJFTXCUETQ72VPRSI7RDAEFHXYGSBZY";
+          let owner = "<PUBLIC-KEY>";
+          let receiver = "<RECEIVER-PUBLIC-KEY>";
           let hashFn = "sha256";
           let hashImg = "QzYhq9JlYbn2QdOMrhyxVlNtNjeyvyJc/I8d8VAGfGc=";
           let expiryRound = params.lastRound + 10000;
