@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Algorand WAR</title>
+		<meta charset="UTF-8">		
+		<script src="js/jquery-1.7.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/algorandwar.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/d2bf85c9c1.js"></script>
+		<script type="text/javascript" src="js/clipboard.min.js"></script>
+
+		<!-- Data script -->
+		<script>
+
+			var xhr3 = new XMLHttpRequest();
+			xhr3.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+		
+				var data = JSON.parse(this.responseText);
+				console.log(data);
+				document.getElementById('pubKey').value = data.pub2;
+				document.getElementById('privKey').value = data.pub1;
+				document.getElementById('balance').innerHTML = data.balance;	
+			}
+			};     
+			xhr3.open("GET", "/user", true);
+			xhr3.send(); 
+		
+		</script>
+	</head>
+	<body>
+		<h1><img width="40" height="50" src="images/algorand_reddish_logo.png" />lgorand W<img width="40" height="50" src="images/algorand_reddish_logo.png" />R</h1>
+	
+		<h2>"The One who plucks the highest card 10 times first wins!"</h2>
+
+		<img class="preload" src="images/cards.png"/>
+
+		<div id="points" style="border: 2px solid #cc0000;width:60%;">
+			<span style="color:red;font-weight:bold;">Score</span>&nbsp;&nbsp;&nbsp;
+			<span>CPU</span>&nbsp; <span id="cpu"></span> &nbsp;&nbsp;
+			<span>Player</span>&nbsp; <span id="player"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button type="button" style="margin:5px;text-align:center;" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Place Bet</button>
+		</div>
+
+		<div id="card-table">
+			<!-- Add which card beat which card by which player here... -->
+			<div style="text-align:center;color:#cc0000;font-weight: bolder;">
+				<BR><BR>
+				<span id="winningHand"></span>
+			</div>
+			<button id="deal" class="btn btn-warning">Start WAR</button>			
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+		  <div class="modal-dialog">
+		  
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h3 class="modal-title">Your Algorand Account (Testnet)</h3>
+			  </div>
+			  <div class="modal-body">
+
+					<div style="text-align:center;">
+							
+						<!-- <div style="text-align:center;" id="qrcodeCanvas"></div> -->							
+						<BR>	 
+
+						<input type="text" id="pubKey" value="" class="" />
+						<button class="btn" data-clipboard-action="copy" data-clipboard-target="#pubKey" style="background:#cc0000;color:white;font-weight:bold;width:60px;">
+							<i class="fa fa-copy"></i>
+						</button><BR><BR>
+						<input type="password" id="privKey" value="" class="" /><BR><BR>
+						<h4>Your balance is <span id="balance" style="color:#cc0000;font-weight:bold;"></span>&nbsp;&micro;<img width="15" height="15" src="images/algorand_reddish_logo.png" /></h4>
+						<BR>
+
+						<button class="btn btn-warning" id="bet" style="color:#cc0000;font-weight:bold;">Bet &micro;<img width="15" height="15" src="images/algorand_reddish_logo.png" /></button>
+						<BR><BR>
+
+						<span id="contract">Contract launched!</span>
+
+					</div>
+			  </div>
+
+			</div>
+			
+		  </div>
+		</div>
+
+		<footer>
+			Algorand War card game by <a href="https://yourperfectweb.net" target="_blank"> Maurice Walker II</a>. 
+			<BR><a href="https://github.com/mauricedw22/algorandwar" target="_blank">Submission project</a> for the Encode Club Algorand Hackathon 2021!
+		</footer>
+		<!-- load this at the bottom so the #card-table element exists -->
+		<script src="js/deckType.js"></script>
+		<script src="js/cards.js"></script>
+		<script src="js/algorandwar.js"></script>
+		<script>
+			$(document).ready(function(){
+				var clipboard = new ClipboardJS('.btn');
+				
+				clipboard.on('success', function(e) {
+					console.log(e);
+				});
+				
+				clipboard.on('error', function(e) {
+					console.log(e);
+				});
+			});
+		</script>
+	</body>
+</html>
