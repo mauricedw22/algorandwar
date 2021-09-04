@@ -79,12 +79,12 @@ lowerhand.click(function(card){
 	if (playerPoints == 10){
 		$('#winningHand').html("Congrats, YOU WIN!");
 		setTimeout(function(){ 
-			window.location.href = "http://localhost:5000";
+			window.location.href = "https://algorandwar.herokuapp.com";
 		 }, 2000);
 	}else if (cpuPoints == 10){
 		$('#winningHand').html("You lose... Please try again!");
 		setTimeout(function(){ 
-			window.location.href = "http://localhost:5000";
+			window.location.href = "https://algorandwar.herokuapp.com";
 		 }, 2000);
 	}
 });
