@@ -1,4 +1,4 @@
-<h1 style="color:#cc0000;text-align:center;"><img width="30" height="30" src="public/images/algorand_reddish_logo.png" />lgorand W<img width="30" height="30" src="public/images/algorand_reddish_logo.png" />R</h1>
+<h1 style="color:#cc0000;text-align:center;"><img width="30" height="30" src="https://algorandwar.herokuapp.com/images/algorand_reddish_logo.png" />lgorand W<img width="30" height="30" src="https://algorandwar.herokuapp.com/images/algorand_reddish_logo.png" />R</h1>
 	
 <h2 style="text-align:center;font-style:italic;">"The One who plucks the highest card 10 times first wins!"</h2>
 
