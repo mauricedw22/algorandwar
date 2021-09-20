@@ -4,7 +4,7 @@
 
 <h3><span style="color:red;">&hearts;</span>&nbsp; Introduction &nbsp;<span style="color:red;">&hearts;</span></h3>
 
-<p>Algorand War card game is an exciting and fun web application for card game lovers everywhere. The classic game of War with smart contract betting capability is available for playing and testing <a href="https://algorandwar.herokuapp.com">here now</a>.</p>
+<p>Algorand war is a web app implementation of the classic War card game. It is the first of a suite of web-based card game apps that will enable smart contract-based betting on the Algorand blockchain. Future games to be built include Gin Rummy, Spades, Hearts, Speed, and many others! Currently, Algorand War enables users to play against an arbitrary CPU opponent, but immediate upgrade plans include adding multi-player gameplay with WebRTC interactivity where friends can bet, trash talk, and play against each other. The classic game of War with smart contract betting capability is available for playing and testing <a href="https://algorandwar.herokuapp.com">here now</a>.</p>
 
 <h3>&spades;&nbsp; Features &nbsp;&spades;</h3>
 <ul>
